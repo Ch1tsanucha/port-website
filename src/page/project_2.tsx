@@ -68,7 +68,7 @@ export default function Project() {
       </div> */}
 
       <div className="h-full w-[1500px]">
-        <Nav />
+        {/* <Nav /> */}
       </div>
     </div>
   );

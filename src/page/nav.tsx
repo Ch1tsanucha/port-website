@@ -161,7 +161,7 @@ export default function Nav() {
   return (
     <div className="relative " ref={comp}>
     <div id="intro-slider" className="h-screen p-10 bg-[#fefaf2] absolute top-0 left-0 z-20 w-full flex flex-col gap-10 tracking-tight">
-            <h1 id="title1" className="text-9xl text-[#131313] font-bold">CHITSANUCHA</h1>
+            <h1 id="title1" className="text-9xl text-[#131313] font-bold">CHITSANUCH</h1>
             <h1 id="title2" className="text-9xl text-[#131313] font-bold">ONRIT</h1>
             <h1 id="title3" className="text-9xl text-[#131313] font-bold">BB.</h1>
         </div>
@@ -282,11 +282,12 @@ export default function Nav() {
 
       {/* Section 4 */}
       <section
-        className="flex-shrink-0 snap-center flex bg-[#131313] w-screen h-screen"
+        className="flex-shrink-0 h-screen w-full snap-center flex justify-center bg-[#131313]"
         ref={section4Ref}
         id="section4"
       >
         <div className="w-screen h-screen flex justify-center items-center">
+          
           <Contact />
         </div>
       </section>
