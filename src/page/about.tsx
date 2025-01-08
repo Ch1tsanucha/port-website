@@ -88,10 +88,10 @@ interface SplitTextProps {
 
 export default function About() {
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center">
-      <div className="flex flex-col w-full items-center">
+    <div className="h-full w-full flex flex-col justify-center items-center gap-10">
+      <div className="flex justify-center w-full">
         <div className="w-2/3">
-          <div className="text-[90px]">
+          <div className="text-sm xl:text-5xl 2xl:text-6xl w-full">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -101,7 +101,7 @@ export default function About() {
               CHITSANUCHA
             </motion.p>
           </div>
-          <div className="text-[90px]">
+          <div className="text-sm xl:text-5xl 2xl:text-6xl w-full">
             {" "}
             <motion.p
               initial={{ opacity: 0 }}
@@ -116,7 +116,7 @@ export default function About() {
       </div>
 
       <div className="flex justify-center items-center w-full relative">
-        <div className="text-sm xl:text-xl 2xl:text-4xl w-2/3">
+        <div className="text-sm xl:text-lg 2xl:text-xl w-2/3">
           <AnimatePresence>
             <motion.p
               initial={{ opacity: 0 }}
