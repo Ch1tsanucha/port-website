@@ -1,5 +1,5 @@
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useRef, useLayoutEffect, useState } from "react";
 function Sec1() {
@@ -21,44 +21,28 @@ const sliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  arrows: true, 
+  arrows: true,
   autoplaySpeed: 3000,
   pauseOnHover: true,
-  
 };
 
-
-
 function Nav() {
-
-  
   return (
-   
-    <div className="h-full w-full flex justify-center items-center my-10"> {/* Apply overflow-hidden here */}
-    <Slider {...sliderSettings} className="w-full ">
-    <div className="bg-red-400 h-[800px] ">
-        <span className="text-black font-bold"></span>
-      </div>
-      <div className="bg-green-400 h-[800px]">
-        <span className="text-white font-bold"></span>
-      </div>
-      <div className="bg-yellow-400 h-[800px] ">
-        <span className="text-black font-bold"></span>
-      </div>
-    </Slider>
-  </div>
-   
+    <div className="h-full w-full flex justify-center items-center my-10">
+
+
+    </div>
   );
 }
 
-
-
 export default function Project() {
+  const section1Ref = useRef<HTMLElement | null>(null);
+  const section2Ref = useRef<HTMLElement | null>(null);
+  const section3Ref = useRef<HTMLElement | null>(null);
 
-  
   return (
-    <div className="h-full w-full flex justify-center"> 
-     {/* grid-rows-[1fr] items-center */}
+    <div className="h-full w-full grid grid-rows-[1fr_0.25fr] ">
+      {/* grid-rows-[1fr] items-center */}
       {/* <div className="h-full w-full flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
         <section className="flex-shrink-0 w-full h-full snap-center bg-[#131313] flex"></section>
 
@@ -67,13 +51,32 @@ export default function Project() {
         <section className="flex-shrink-0 w-full h-full snap-center bg-[#131313] flex"></section>
       </div> */}
 
-      <div className="h-full w-[1500px]">
+      <div className="flex-1 w-full flex justify-center items-center">
         {/* <Nav /> */}
+        <div className="h-full w-full flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
+          <section
+            ref={section1Ref}
+            className="flex-shrink-0 w-full h-full snap-center bg-red-300 flex"
+          ></section>
+          <section
+            ref={section1Ref}
+            className="flex-shrink-0 w-full h-full snap-center bg-green-300 flex"
+          ></section>
+          <section
+            ref={section1Ref}
+            className="flex-shrink-0 w-full h-full snap-center bg-yellow-300 flex"
+          ></section>
+        </div>
+      </div>
+
+      <div className="bg-red-700 flex-1 w-full flx justify-center items-center">
+<section className="bg-red-500 h-10 w-10"></section>
+<section></section>
+<section></section>
       </div>
     </div>
   );
 }
-
 
 // const sliderSettings = {
 //   dots: true, // Enable dots
@@ -82,7 +85,7 @@ export default function Project() {
 //   slidesToShow: 4,
 //   slidesToScroll: 1,
 //   autoplay: true,
-//   arrows: false, 
+//   arrows: false,
 //   autoplaySpeed: 2000,
 //   customPaging: (i:number) => (
 //     <div className="custom-dot">
@@ -91,10 +94,9 @@ export default function Project() {
 //   ),
 // };
 
-
 // function Nav() {
 //   return (
-   
+
 //     <div className="h-full w-full overflow-hidden "> {/* Apply overflow-hidden here */}
 //     <Slider {...sliderSettings} className="w-full ">
 //       <div className="bg-red-400 h-32  ">
@@ -111,6 +113,6 @@ export default function Project() {
 //       </div>
 //     </Slider>
 //   </div>
-   
+
 //   );
 // }

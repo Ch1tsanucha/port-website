@@ -67,24 +67,24 @@ interface SplitTextProps {
   text: string;
 }
 
-const SplitText: React.FC<SplitTextProps> = ({ text }) => {
-  const letters = text.split("");
+// const SplitText: React.FC<SplitTextProps> = ({ text }) => {
+//   const letters = text.split("");
 
-  return (
-    <div>
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.05, type: "spring", stiffness: 100 }}
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       {letters.map((letter, index) => (
+//         <motion.span
+//           key={index}
+//           initial={{ opacity: 0, x: -20 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ delay: index * 0.05, type: "spring", stiffness: 100 }}
+//         >
+//           {letter}
+//         </motion.span>
+//       ))}
+//     </div>
+//   );
+// };
 
 export default function About() {
   return (
@@ -116,7 +116,7 @@ export default function About() {
       </div>
 
       <div className="flex justify-center items-center w-full relative">
-        <div className="text-xl w-2/3">
+        <div className="text-sm xl:text-xl 2xl:text-4xl w-2/3">
           <AnimatePresence>
             <motion.p
               initial={{ opacity: 0 }}
