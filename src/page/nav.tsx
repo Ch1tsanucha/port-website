@@ -160,11 +160,11 @@ export default function Nav() {
 
   return (
     <div className="relative " ref={comp}>
-    <div id="intro-slider" className="h-screen p-10 bg-[#fefaf2] absolute top-0 left-0 z-20 w-full flex flex-col gap-10 tracking-tight">
+    {/* <div id="intro-slider" className="h-screen p-10 bg-[#fefaf2] absolute top-0 left-0 z-20 w-full flex flex-col gap-10 tracking-tight">
             <h1 id="title1" className="text-9xl text-[#131313] font-bold">CHITSANUCH</h1>
             <h1 id="title2" className="text-9xl text-[#131313] font-bold">ONRIT</h1>
             <h1 id="title3" className="text-9xl text-[#131313] font-bold">BB.</h1>
-        </div>
+        </div> */}
   
     <div className=" flex flex-col  no-scrollbar h-screen">
      
@@ -185,8 +185,8 @@ export default function Nav() {
             CHITSANUCHA
           </button>
 
-          <div className="flex-1 flex justify-end px-20 text-[30px] items-center">
-            <ul className="flex justify-between gap-32">
+          <div className="flex-1 flex justify-end px-20  xl:text-[35px] 2xl:text-[50px] items-center">
+            <ul className="w-full flex justify-around gap-12">
               <button
                 className={`${
                   activeSection === "section2" ||

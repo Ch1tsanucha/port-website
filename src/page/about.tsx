@@ -157,7 +157,7 @@ export default function About() {
           </AnimatePresence>
         </div>
 
-        <Nav />
+        {/* <Nav /> */}
       </div>
     </div>
   );
