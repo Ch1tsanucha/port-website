@@ -185,8 +185,8 @@ export default function Nav() {
             CHITSANUCHA
           </button>
 
-          <div className="flex-1 flex justify-end px-20  xl:text-[35px] 2xl:text-[50px] items-center">
-            <ul className="w-full flex justify-around gap-12">
+          <div className="flex-1 flex justify-end px-20 text-[30px]  xl:text-[35px] 2xl:text-[45px] items-center">
+            <ul className="w-full flex justify-around gap-10">
               <button
                 className={`${
                   activeSection === "section2" ||
