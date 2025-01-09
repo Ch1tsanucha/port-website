@@ -1,20 +1,29 @@
 import React, { RefObject, useRef, useState } from "react";
 import Slider, { Settings } from "react-slick";
 import { motion } from "framer-motion";
-import graddex_logo from "../assets/gradex.svg"
-import bangmod_logo from "../assets/bangmod.svg"
-import phile_logo from "../assets/phile.svg"
+import gradex_logo from "../assets/gradex/gradex.svg";
+import gradex1 from "../assets/gradex/gradex1.png";
+import gradex2 from "../assets/gradex/gradex2.png";
+import gradex3 from "../assets/gradex/gradex3.png";
+import bangmod_logo from "../assets/bangmod/bangmod.svg";
+import bangmod1 from "../assets/bangmod/bangmod1.png";
+import bangmod2 from "../assets/bangmod/bangmod2.png";
+import bangmod3 from "../assets/bangmod/bangmod3.png";
+import phile_logo from "../assets/phile/phile.svg";
+import phile1 from "../assets/phile/phile1.png";
+import phile2 from "../assets/phile/phile2.png";
+import phile3 from "../assets/phile/phile3.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Project() {
-  const section1Ref = useRef<HTMLElement | null>(null);
-  const section2Ref = useRef<HTMLElement | null>(null);
-  const section3Ref = useRef<HTMLElement | null>(null);
+  const sectionRefs = [
+    useRef<HTMLElement | null>(null),
+    useRef<HTMLElement | null>(null),
+    useRef<HTMLElement | null>(null),
+  ];
 
-  const [check1, setCheck1] = useState(false);
-  const [check2, setCheck2] = useState(false);
-  const [check3, setCheck3] = useState(false);
+  const [checks, setChecks] = useState([false, false, false]);
 
   const sliderSettings: Settings = {
     dots: false,
@@ -50,66 +59,85 @@ export default function Project() {
     );
   }
 
+  const img_logo = [
+    { bg: "bg-[#210D3E]", img: phile_logo },
+    { bg: "bg-[#fefaf2]", img: gradex_logo },
+    { bg: "bg-[#0e2a3f66]", img: bangmod_logo },
+  ].map((section, index) => (
+    <motion.img
+      key={index}
+      src={section.img}
+      alt=""
+      initial={{ y: 0 }}
+      animate={{ y: checks[index] ? -30 : 0 }}
+      className={`${section.bg} h-full w-full`}
+    />
+  ));
+
   return (
     <div className="h-full w-full grid grid-rows-[1fr_0.25fr]">
       <div className="flex-1 w-full flex justify-center items-center">
         <div className="h-full w-full flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
-          <Section
-            sectionRef={section1Ref}
-            bgColor="bg-red-300"
-            sliderSettings={sliderSettings}
-          />
-          <Section
-            sectionRef={section2Ref}
-            bgColor="bg-green-300"
-            sliderSettings={sliderSettings}
-          />
-          <Section
-            sectionRef={section3Ref}
-            bgColor="bg-yellow-300"
-            sliderSettings={sliderSettings}
-          />
+          {[
+            { bgColor: "bg-red-300", 
+              img1: phile1, 
+              img2: phile2, 
+              img3: phile3 ,
+              Name: "Phile"
+            },
+            {
+              bgColor: "bg-green-300",
+              img1: gradex1,
+              img2: gradex2,
+              img3: gradex3,
+              Name: "Gradex"
+            },
+            {
+              bgColor: "bg-yellow-300",
+              img1: bangmod1,
+              img2: bangmod2,
+              img3: bangmod3,
+              Name: "Bangmod"
+            },
+          ].map((section, index) => (
+            <Section
+              key={index}
+              sectionRef={sectionRefs[index]}
+              bgColor={section.bgColor}
+              sliderSettings={sliderSettings}
+              img1={section.img1}
+              img2={section.img2}
+              img3={section.img3}
+              Name={section.Name}
+            />
+          ))}
         </div>
       </div>
 
       <div className="flex-1 w-full items-center flex justify-center">
         <div className="flex gap-2 h-full w-1/2 justify-center items-center">
-          <motion.div
-            className="h-4/5 w-10/12"
-            onMouseEnter={() => setCheck1(true)}
-            onMouseLeave={() => setCheck1(false)}
-            onClick={() => scrollToSection(section1Ref)}
-          >
-          <motion.img src={phile_logo} alt="" 
-           initial={{ y: 0 }}
-           animate={{ y: check1 ? -30 : 0 }}
-           className="bg-[#210D3E] h-full w-full"/>
-          </motion.div>
-
-          <motion.div
-            className="h-4/5 w-10/12"
-            onMouseEnter={() => setCheck2(true)}
-            onMouseLeave={() => setCheck2(false)}
-            onClick={() => scrollToSection(section2Ref)}
-          >
-          <motion.img src={graddex_logo} alt="" 
-           initial={{ y: 0 }}
-           animate={{ y: check2 ? -30 : 0 }}
-           className="bg-[#fefaf2] h-full w-full"/>
-
-          </motion.div>
-    
-          <motion.div
-            className="h-4/5 w-10/12"
-            onMouseEnter={() => setCheck3(true)}
-            onMouseLeave={() => setCheck3(false)}
-            onClick={() => scrollToSection(section3Ref)}
-          >
-              <motion.img src={bangmod_logo} alt="" 
-           initial={{ y: 0 }}
-           animate={{ y: check3 ? -30 : 0 }}
-           className="bg-[#0e2a3f66]   h-full w-full"/>
-          </motion.div>
+          {img_logo.map((logo, i) => (
+            <motion.div
+              className="h-4/5 w-10/12"
+              onMouseEnter={() => {
+                setChecks((prev) => {
+                  const updatedChecks = [...prev]; // Clone the previous state
+                  updatedChecks[i] = true; // Set the corresponding index to true
+                  return updatedChecks; // Return the updated state
+                });
+              }}
+              onMouseLeave={() => {
+                setChecks((prev) => {
+                  const updatedChecks = [...prev]; // Clone the previous state
+                  updatedChecks[i] = false; // Set the corresponding index to false
+                  return updatedChecks; // Return the updated state
+                });
+              }}
+              onClick={() => scrollToSection(sectionRefs[i])}
+            >
+              {logo}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
@@ -120,12 +148,20 @@ interface SectionProps {
   sectionRef: RefObject<HTMLElement>;
   bgColor: string;
   sliderSettings: Settings;
+  img1: string;
+  img2: string;
+  img3: string;
+  Name: string;
 }
 
 const Section: React.FC<SectionProps> = ({
   sectionRef,
   bgColor,
   sliderSettings,
+  img1,
+  img2,
+  img3,
+  Name
 }) => {
   return (
     <section
@@ -144,7 +180,7 @@ const Section: React.FC<SectionProps> = ({
                   <div>
                     <div className="w-full h-full flex items-center">
                       <p className="text-sm xl:text-5xl 2xl:text-4xl">
-                        Name of Project
+                        {Name}
                       </p>
                     </div>
                   </div>
@@ -185,15 +221,15 @@ const Section: React.FC<SectionProps> = ({
                 "800"
               )} flex justify-center items-center overflow-hidden`}
             >
-              <Slider {...sliderSettings} className="h-[400px] w-[700px]">
-                <div className="bg-red-400 h-[400px] w-full">
-                  <span className="text-black font-bold"></span>
+              <Slider {...sliderSettings} className="h-[400px] w-[750px]">
+                <div className="bg-red-400 h-[370px] w-full">
+                  <img src={img1} alt="" className="h-full w-full" />
                 </div>
-                <div className="bg-green-400 h-[400px] w-full">
-                  <span className="text-white font-bold"></span>
+                <div className="bg-green-400 h-[370px] w-full">
+                  <img src={img2} alt="" className="h-full w-full" />
                 </div>
-                <div className="bg-yellow-400 h-[400px] w-full">
-                  <span className="text-black font-bold"></span>
+                <div className="bg-yellow-400 h-[370px] w-full">
+                  <img src={img3} alt="" className="h-full w-full" />
                 </div>
               </Slider>
             </div>
