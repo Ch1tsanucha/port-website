@@ -135,23 +135,34 @@ const Section: React.FC<SectionProps> = ({
       <div className="grid grid-rows-[0.25fr_1fr] w-full">
         <div></div>
         <div className={`w-full ${bgColor}`}>
-          <div className="grid grid-cols-[1fr_2fr] w-full h-full">
+          <div className="grid grid-cols-[1fr_1fr] w-full h-full">
             <div className={`${bgColor.replace("300", "200")}`}>
-              <div className="h-full w-full flex justify-center items-center">
-              <div className="grid grid-rows-3 w-full h-full">
+              <div className="h-full w-full grid grid-cols-[0.2fr_1fr]">
+                <div>
+                  
+                </div>
+              <div className="grid grid-rows-[1fr_1fr_1fr] w-full h-full gap-1">
   <div className="flex justify-center items-center">
-    <p>
+    <div className="w-full h-full flex items-center">
+    <p className="text-sm xl:text-5xl 2xl:text-4xl">
       Name of Project
     </p>
+    </div>
+   
   </div>
   <div className="w-full flex justify-center items-center">
-    <p className="overflow-y-auto w-1/2 h-40 p-4 border border-gray-300 rounded">
+    <div className="w-full h-full flex items-center">
+    <p className="overflow-scroll w-full h-40 p-4 border border-gray-300 rounded">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aspernatur minima placeat asperiores omnis incidunt a doloremque aut voluptate? Dolores earum accusantium eos laborum est fuga, iusto non inventore error. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta, ut voluptatem eligendi adipisci debitis iusto voluptate eos velit, expedita obcaecati enim reprehenderit ipsam, illum esse aliquid numquam! Veniam, nihil?
     </p>
+    </div>
+  
   </div>
-  <div className="flex justify-center items-center">
-    <ul>
-      <li>Tools</li>
+  <div className=" w-full flex flex-col justify-center items-center">
+    <ul className=" w-full flex justify-start">
+    <li className="text-sm xl:text-5xl 2xl:text-3xl">Tools</li>
+    </ul>
+    <ul className="w-full flex justify-start ">
       <li>JavaScript</li>
       <li>React</li>
       <li>HTML</li>
@@ -169,13 +180,13 @@ const Section: React.FC<SectionProps> = ({
             >
               <Slider {...sliderSettings} className="h-[400px] w-[700px]">
                 <div className="bg-red-400 h-[400px] w-full">
-                  <span className="text-black font-bold">Slide 1</span>
+                  <span className="text-black font-bold"></span>
                 </div>
                 <div className="bg-green-400 h-[400px] w-full">
-                  <span className="text-white font-bold">Slide 2</span>
+                  <span className="text-white font-bold"></span>
                 </div>
                 <div className="bg-yellow-400 h-[400px] w-full">
-                  <span className="text-black font-bold">Slide 3</span>
+                  <span className="text-black font-bold"></span>
                 </div>
               </Slider>
             </div>
