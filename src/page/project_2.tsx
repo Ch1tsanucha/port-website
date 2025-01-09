@@ -1,7 +1,9 @@
 import React, { RefObject, useRef, useState } from "react";
 import Slider, { Settings } from "react-slick";
 import { motion } from "framer-motion";
-
+import graddex_logo from "../assets/gradex.svg"
+import bangmod_logo from "../assets/bangmod.svg"
+import phile_logo from "../assets/phile.svg"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -78,11 +80,10 @@ export default function Project() {
             onMouseLeave={() => setCheck1(false)}
             onClick={() => scrollToSection(section1Ref)}
           >
-            <motion.section
-              initial={{ y: 0 }}
-              animate={{ y: check1 ? -30 : 0 }}
-              className="bg-red-500 h-full w-full"
-            />
+          <motion.img src={phile_logo} alt="" 
+           initial={{ y: 0 }}
+           animate={{ y: check1 ? -30 : 0 }}
+           className="bg-[#210D3E] h-full w-full"/>
           </motion.div>
 
           <motion.div
@@ -91,24 +92,23 @@ export default function Project() {
             onMouseLeave={() => setCheck2(false)}
             onClick={() => scrollToSection(section2Ref)}
           >
-            <motion.section
-              initial={{ y: 0 }}
-              animate={{ y: check2 ? -30 : 0 }}
-              className="bg-green-500 h-full w-full"
-            />
-          </motion.div>
+          <motion.img src={graddex_logo} alt="" 
+           initial={{ y: 0 }}
+           animate={{ y: check2 ? -30 : 0 }}
+           className="bg-[#fefaf2] h-full w-full"/>
 
+          </motion.div>
+    
           <motion.div
             className="h-4/5 w-10/12"
             onMouseEnter={() => setCheck3(true)}
             onMouseLeave={() => setCheck3(false)}
             onClick={() => scrollToSection(section3Ref)}
           >
-            <motion.section
-              initial={{ y: 0 }}
-              animate={{ y: check3 ? -30 : 0 }}
-              className="bg-yellow-500 h-full w-full"
-            />
+              <motion.img src={bangmod_logo} alt="" 
+           initial={{ y: 0 }}
+           animate={{ y: check3 ? -30 : 0 }}
+           className="bg-[#0e2a3f66]   h-full w-full"/>
           </motion.div>
         </div>
       </div>
@@ -132,44 +132,51 @@ const Section: React.FC<SectionProps> = ({
       ref={sectionRef}
       className="flex-shrink-0 w-full h-full snap-center flex"
     >
-      <div className="grid grid-rows-[0.25fr_1fr] w-full">
+      <div className="grid grid-rows-[0.25fr_1fr] w-full h-full">
         <div></div>
-        <div className={`w-full ${bgColor}`}>
+        <div className="w-full h-full">
           <div className="grid grid-cols-[1fr_1fr] w-full h-full">
-            <div className={`${bgColor.replace("300", "200")}`}>
+            <div className={`${bgColor.replace("300", "200")} w-full h-full`}>
               <div className="h-full w-full grid grid-cols-[0.2fr_1fr]">
-                <div>
-                  
+                <div className="w-full h-full"></div>
+                <div className="grid grid-rows-[1fr_1fr_1fr_1fr_1fr] items-center w-full h-full">
+                  <div></div>
+                  <div>
+                    <div className="w-full h-full flex items-center">
+                      <p className="text-sm xl:text-5xl 2xl:text-4xl">
+                        Name of Project
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="w-full h-full flex items-center">
+                      <p className="overflow-scroll h-24 no-scrollbar">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dolore aspernatur minima placeat asperiores omnis
+                        incidunt a doloremque aut voluptate? Dolores earum
+                        accusantium eos laborum est fuga, iusto non inventore
+                        error. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Necessitatibus dicta, ut voluptatem
+                        eligendi adipisci debitis iusto voluptate eos velit,
+                        expedita obcaecati enim reprehenderit ipsam, illum esse
+                        aliquid numquam! Veniam, nihil?
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <ul className=" w-full flex justify-start">
+                      <li className="text-sm xl:text-5xl 2xl:text-3xl">
+                        Tools
+                      </li>
+                    </ul>
+                    <ul className="w-full flex justify-start gap-4">
+                      <li>JavaScript</li>
+                      <li>React</li>
+                      <li>HTML</li>
+                    </ul>
+                  </div>
+                  <div></div>
                 </div>
-              <div className="grid grid-rows-[1fr_1fr_1fr] w-full h-full gap-1">
-  <div className="flex justify-center items-center">
-    <div className="w-full h-full flex items-center">
-    <p className="text-sm xl:text-5xl 2xl:text-4xl">
-      Name of Project
-    </p>
-    </div>
-   
-  </div>
-  <div className="w-full flex justify-center items-center">
-    <div className="w-full h-full flex items-center">
-    <p className="overflow-scroll w-full h-40 p-4 border border-gray-300 rounded">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aspernatur minima placeat asperiores omnis incidunt a doloremque aut voluptate? Dolores earum accusantium eos laborum est fuga, iusto non inventore error. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta, ut voluptatem eligendi adipisci debitis iusto voluptate eos velit, expedita obcaecati enim reprehenderit ipsam, illum esse aliquid numquam! Veniam, nihil?
-    </p>
-    </div>
-  
-  </div>
-  <div className=" w-full flex flex-col justify-center items-center">
-    <ul className=" w-full flex justify-start">
-    <li className="text-sm xl:text-5xl 2xl:text-3xl">Tools</li>
-    </ul>
-    <ul className="w-full flex justify-start ">
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>HTML</li>
-    </ul>
-  </div>
-</div>
-
               </div>
             </div>
             <div
