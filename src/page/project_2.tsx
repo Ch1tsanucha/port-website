@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export default function Project() {
   const section1Ref = useRef<HTMLElement | null>(null);
   const section2Ref = useRef<HTMLElement | null>(null);
@@ -48,8 +47,6 @@ export default function Project() {
       </Slider>
     );
   }
-
-
 
   return (
     <div className="h-full w-full grid grid-rows-[1fr_0.25fr]">
@@ -139,7 +136,31 @@ const Section: React.FC<SectionProps> = ({
         <div></div>
         <div className={`w-full ${bgColor}`}>
           <div className="grid grid-cols-[1fr_2fr] w-full h-full">
-            <div className={`${bgColor.replace("300", "200")}`}></div>
+            <div className={`${bgColor.replace("300", "200")}`}>
+              <div className="h-full w-full flex justify-center items-center">
+              <div className="grid grid-rows-3 w-full h-full">
+  <div className="flex justify-center items-center">
+    <p>
+      Name of Project
+    </p>
+  </div>
+  <div className="w-full flex justify-center items-center">
+    <p className="overflow-y-auto w-1/2 h-40 p-4 border border-gray-300 rounded">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aspernatur minima placeat asperiores omnis incidunt a doloremque aut voluptate? Dolores earum accusantium eos laborum est fuga, iusto non inventore error. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta, ut voluptatem eligendi adipisci debitis iusto voluptate eos velit, expedita obcaecati enim reprehenderit ipsam, illum esse aliquid numquam! Veniam, nihil?
+    </p>
+  </div>
+  <div className="flex justify-center items-center">
+    <ul>
+      <li>Tools</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>HTML</li>
+    </ul>
+  </div>
+</div>
+
+              </div>
+            </div>
             <div
               className={`${bgColor.replace(
                 "300",
