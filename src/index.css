@@ -23,3 +23,13 @@ html {
   margin: 0 10px;
  
 } */
+
+.slick-slide {
+  height:80%;
+  width: 80%;
+}
+
+.slick-slide img {
+  height:80%;
+  width: 80%;
+}

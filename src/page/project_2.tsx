@@ -185,7 +185,7 @@ const Section: React.FC<SectionProps> = ({
                     </div>
                   </div>
                   <div>
-                    <div className="w-full h-full flex items-center">
+                    <div className="w-full h-20 flex items-center">
                       <p className="overflow-scroll h-24 no-scrollbar">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Dolore aspernatur minima placeat asperiores omnis
@@ -219,16 +219,16 @@ const Section: React.FC<SectionProps> = ({
               className={`${bgColor.replace(
                 "300",
                 "800"
-              )} flex justify-center items-center overflow-hidden`}
+              )} flex justify-center items-center overflow-hidden w-full h-full`}
             >
-              <Slider {...sliderSettings} className="h-[400px] w-[750px]">
-                <div className="bg-red-400 h-[370px] w-full">
+              <Slider {...sliderSettings} className="w-full h-1/2">
+                <div className="bg-red-400">
                   <img src={img1} alt="" className="h-full w-full" />
                 </div>
-                <div className="bg-green-400 h-[370px] w-full">
+                <div className="bg-green-400 ">
                   <img src={img2} alt="" className="h-full w-full" />
                 </div>
-                <div className="bg-yellow-400 h-[370px] w-full">
+                <div className="bg-yellow-400">
                   <img src={img3} alt="" className="h-full w-full" />
                 </div>
               </Slider>
