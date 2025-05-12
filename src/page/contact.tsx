@@ -1,10 +1,12 @@
 export default function Contact() {
   return (
     <div className="h-full flex flex-col justify-center">
-      <div className="text-[90px]">Contact</div>
+      <div className="text-[90px] flex justify-center items-center">
+        <div>Contact</div>
+      </div>
       <div className="flex justify-start ">
-        <div className="text-xl w-full">
-          <ul className="flex flex-col gap-10">
+        <div className="text-sm xl:text-xl 2xl:text-4xl w-full">
+          <ul className="flex flex-col gap-10 items-stat">
             <li
               style={{
                 fontFamily:
@@ -16,14 +18,7 @@ export default function Contact() {
                 chitsanucha.onri@gmail.com
               </a>
             </li>
-            <li
-              style={{
-                fontFamily:
-                  'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-              }}
-            >
-              📱Mobile telephone : +66-82-138-2994
-            </li>
+
             <li
               style={{
                 fontFamily:
